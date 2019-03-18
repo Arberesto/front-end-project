@@ -8,7 +8,8 @@ export default class SideBar extends React.Component {
         const { className } = this.props;
         return (
             <aside className={`side-bar${className ? ` ${className}` : ''}`}>
-                <h1 className='side-bar__title'>Боковое меню</h1>
+                <p className='side-bar__element'>To Do</p>
+                <p className='side-bar__element'>Done</p>
             </aside>
         );
     };
@@ -16,8 +17,4 @@ export default class SideBar extends React.Component {
 
 SideBar.propTypes = {
     className: PropTypes.string
-};
-
-SideBar.defaultProps = {
-    className: 'toDo'
 };
