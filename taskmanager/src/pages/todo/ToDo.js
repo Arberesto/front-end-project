@@ -6,7 +6,7 @@ import list from './list';
 
 import './style.css';
 
-export default class toDO extends React.Component {
+export default class ToDo extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
