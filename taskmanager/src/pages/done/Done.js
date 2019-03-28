@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Article from '../../components/article/Article';
+import ArticleDone from '../../components/article__done/ArticleDone';
 
 import list from './list';
 
@@ -10,7 +10,7 @@ export default class Done extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
-                <Article key={index} title={item.title} description={item.description} />
+                <ArticleDone key={index} title={item.title} description={item.description} />
             );
         });
     };

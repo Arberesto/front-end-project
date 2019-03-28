@@ -23,5 +23,5 @@ export default class Base extends React.Component {
 };
 
 Base.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node. isRequired
 };

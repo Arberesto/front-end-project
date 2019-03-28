@@ -1,9 +1,9 @@
 .main {
     box-sizing: border-box;
     width: 100%;
-    max-width: 960px;
+    /*max-width: 960px;*/
     padding: 0 10px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .main__side-bar {
@@ -11,7 +11,8 @@
     display: inline-block;
     box-sizing: border-box;
     padding: 15px 0 0;
-    max-width: 200px;
+    width: 7%;
+    margin: 0 4%;
 }
 
 .main__content {
@@ -20,4 +21,5 @@
     box-sizing: border-box;
     padding: 15px 10px 0;
     background-color: #fff;
+    margin-right: 5%;
 }

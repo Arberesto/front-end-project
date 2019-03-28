@@ -1,53 +1,10 @@
-.article__pencil {
-    visibility: hidden;
-    background: url("./components/icons/pencil.png") no-repeat;
-}
-
-.article__pencil:hover {
-    background: url("./components/icons/pencil_blue.png") no-repeat;
-}
-
-.article__trash {
-    visibility: hidden;
-    background: url("./components/icons/trash.png") no-repeat;
-}
-
-.article__trash:hover{
-    background: url("./components/icons/trash_red.png") no-repeat;
-}
-
-.article__checkbox {
-    visibility: hidden;
-    background: url("./components/icons/checkbox.png") no-repeat;
-}
-
-.article__checkbox:hover {
-    background: url("./components/icons/checkbox_hover.png") no-repeat;
-}
-
-.article__icon {
-    width: 14px;
-    height: 14px;
-}
-
-.article__link {
-    width: 14px;
-    height: 14px;
-}
-
-.article {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-
-.article:hover .article__icon {
-    visibility: visible;
-}
-
 .article__description {
     padding: 1em 0;
+    display: inline-block;
     font-size: 15px;
     color: #303030;
     font-family: "Roboto",sans-serif;
     font-weight: 300;
-    margin: 10px 0;
+    margin: 0;
+    width: 85%;
 }

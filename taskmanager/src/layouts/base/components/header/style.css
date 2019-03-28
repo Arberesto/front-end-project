@@ -1,16 +1,25 @@
 .header {
     background-color: #96efc0;
+    background: linear-gradient(154deg, #96efc0 0%, #73baff 100%);
     font-family: Helvetica, sans-serif;
 }
 .header__content {
     box-sizing: border-box;
     max-width: 960px;
-    padding: 10px;
-    margin: 0 auto;
+    padding: 0;
+    margin: 0;
 }
 .header__logo {
+    display: inline-block;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
     text-decoration: none;
+    width: 20%;
+}
+
+.header__username {
+    display: inline-block;
+    padding-left: 75%;
+    width: 5%;
 }
