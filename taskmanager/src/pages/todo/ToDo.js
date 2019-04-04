@@ -1,12 +1,12 @@
 import React from 'react';
-
+import {withRouter} from 'react-router';
 import ArticleToDo from '../../components/article__todo/ArticleTodo';
 
 import list from './list';
 
 import './style.css';
 
-export default class ToDo extends React.Component {
+class ToDo extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
@@ -22,4 +22,6 @@ export default class ToDo extends React.Component {
             </React.Fragment>
         );
     };
-};
+}
+
+export default withRouter(ToDo);

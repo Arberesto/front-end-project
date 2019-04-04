@@ -1,12 +1,12 @@
 import React from 'react';
-
+import {withRouter} from 'react-router';
 import ArticleDone from '../../components/article__done/ArticleDone';
 
 import list from './list';
 
 import './style.css';
 
-export default class Done extends React.Component {
+class Done extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
@@ -22,4 +22,6 @@ export default class Done extends React.Component {
             </React.Fragment>
         );
     };
-};
+}
+
+export default withRouter(Done);

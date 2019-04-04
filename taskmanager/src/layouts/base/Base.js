@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router';
 
 import Header from './components/header/Header';
 import SideBar from './components/sideBar/SideBar';
 
 import './style.css';
 
-export default class Base extends React.Component {
+class Base extends React.Component {
     render() {
         return (
             <React.Fragment>
@@ -20,8 +21,10 @@ export default class Base extends React.Component {
             </React.Fragment>
         );
     };
-};
+}
+
+export default withRouter(Base);
 
 Base.propTypes = {
-    children: PropTypes.node. isRequired
+    children:PropTypes.node.isRequired
 };

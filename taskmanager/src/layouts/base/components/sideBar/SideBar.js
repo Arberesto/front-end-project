@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './style.css';
@@ -11,8 +12,14 @@ export default class SideBar extends React.Component {
         const { className } = this.props;
         return (
             <aside className={`side-bar${className ? ` ${className}` : ''}`}>
-                <Element text="ToDo" img={TodoImage} />
-                <Element text="Done" img={DoneImage} />
+                <nav>
+                        <NavLink to="/" activeClassName="element_active">
+                           <Element text="ToDo" img={TodoImage} />
+                        </NavLink>
+                        <NavLink to="/done" activeClassName="element_active">
+                            <Element text="Done" img={DoneImage} />
+                        </NavLink>
+                </nav>
             </aside>
         );
     };

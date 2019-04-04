@@ -1,3 +1,7 @@
+.element_active .element {
+
+}
+
 .element__text {
     display: inline-block;
     font-size: 18px;
