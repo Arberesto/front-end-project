@@ -1,0 +1,61 @@
+
+.element {
+    font-size: 18px;
+    color: #979797;
+    font-family: "Roboto",sans-serif;
+    font-weight: 400;
+    margin: 0;
+    text-decoration: none;
+}
+
+.element__icon {
+    display: inline-block;
+    width: 90%;
+    height: 30px;
+}
+
+.element__todo::before {
+    content: '';
+    position: absolute;
+    left: 0.5em;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    background: url("images/todo_gray.png") no-repeat;
+}
+
+.element__done::before {
+    content: '';
+    position: absolute;
+    left: 0.5em;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    background: url("images/done_gray.png") no-repeat;;
+}
+
+.element_active.element__todo::before {
+    content: '';
+    position: absolute;
+    left: 0.5em;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    background: url("images/todo_blue.png") no-repeat;
+}
+
+.element_active.element__done::before {
+    content: '';
+    position: absolute;
+    left: 0.5em;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    background: url("images/done_blue.png") no-repeat;
+}
+
+
