@@ -8,11 +8,11 @@ import Button from '../Button/Button';
 
 export default class ArticleTodo extends React.Component {
 
-    handleOnClickPencil = () => {alert(this.props.id)}
+    handleOnClickPencil = () => {alert(this.props.id)};
 
-    handleOnClickTrash = () => {alert(this.props.id)}
+    handleOnClickTrash = () => {alert(this.props.id)};
 
-    handleOnClickCheckbox = () => {alert(this.props.id)}
+    handleOnClickCheckbox = () => {alert(this.props.id)};
 
         render() {
         return (
@@ -25,7 +25,6 @@ export default class ArticleTodo extends React.Component {
         );
     };
 };
-/* <div className="article__trash article__icon"></div>*/
 ArticleTodo.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,

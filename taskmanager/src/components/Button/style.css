@@ -1,7 +1,8 @@
 .article__icon {
     width: 14px;
-    height: 14px;
+    min-height: 20px;
     margin: 0 10px;
     border: 0;
     visibility: visible;
+    display: inline-block;
 }
