@@ -2,33 +2,20 @@
 .article__trash {
     visibility: hidden;
     width: 10%;
-    background: url("./components/icons/trash.png") no-repeat;
+    background: url("icons/trash.png") no-repeat;
 }
 
 .article__trash:hover{
-    background: url("./components/icons/trash_red.png") no-repeat;
+    background: url("icons/trash_red.png") no-repeat;
 }
 
 .article__galka {
     visibility: hidden;
-    background: url("./components/icons/done_task_gray.png") no-repeat;
+    background: url("icons/done_task_gray.png") no-repeat;
 }
 
 .article__galka:hover {
-    background: url("./components/icons/done_task_gray.png") no-repeat;
-}
-
-.article__icon {
-    width: 14px;
-    height: 14px;
-    margin: 0 10px;
-}
-
-.article__link {
-    min-width: 14px;
-    width: 5%;
-    height: 14px;
-    display: inline-block;
+    background: url("icons/done_task_gray.png") no-repeat;
 }
 
 .article {
