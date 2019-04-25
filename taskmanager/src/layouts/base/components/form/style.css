@@ -1,0 +1,18 @@
+.form {
+    margin:0 0 10px 0;
+    padding: 0;
+}
+
+.form__input {
+    font-size: 15px;
+    color: #939393;
+    font-family: "Roboto",sans-serif;
+    font-weight: 300;
+    display: inline-flex;
+    vertical-align: bottom;
+    width: 40%;
+    margin: 0 10px 0 0;
+    padding: 0 0 5px 0;
+    border:0;
+    border-bottom: 1.3px solid #45d3a8;
+}

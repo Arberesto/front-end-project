@@ -7,7 +7,8 @@ export default class Button extends React.Component {
         return(
             <React.Fragment>
             <button onClick = {this.props.onClick}
-                    className={`article__icon${this.props.className ? ` ${this.props.className}` : ''}`}/>
+                    className={`button${this.props.className ? ` ${this.props.className}` : ''}`}>
+            </button>
             </React.Fragment>
             );
     };
@@ -15,5 +16,13 @@ export default class Button extends React.Component {
 
 Button.propTypes = {
     onClick:PropTypes.node.isRequired,
-    className:PropTypes.string
+    className:PropTypes.string,
+    text:PropTypes.string
 };
+
+Button.defaultProps = {
+    className:'',
+    text: ''
+};
+
+

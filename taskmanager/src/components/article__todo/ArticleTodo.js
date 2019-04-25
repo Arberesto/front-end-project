@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 import Article from '../article/Article';
-import Button from '../Button/Button';
+import ArticleButton from '../Article__Button/ArticleButton';
 
 
 export default class ArticleTodo extends React.Component {
@@ -17,10 +17,10 @@ export default class ArticleTodo extends React.Component {
         render() {
         return (
             <article className="article">
-                <Button onClick={this.handleOnClickCheckbox} className="article__checkbox"/>
+                <ArticleButton onClick={this.handleOnClickCheckbox} className="article__checkbox"/>
                 <Article description={this.props.description} title={this.props.title}/>
-                <Button onClick={this.handleOnClickPencil} className="article__pencil"/>
-                <Button onClick={this.handleOnClickTrash} className="article__trash"/>
+                <ArticleButton onClick={this.handleOnClickPencil} className="article__pencil"/>
+                <ArticleButton onClick={this.handleOnClickTrash} className="article__trash"/>
             </article>
         );
     };

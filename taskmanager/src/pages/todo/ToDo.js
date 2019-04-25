@@ -5,6 +5,7 @@ import ArticleToDo from '../../components/article__todo/ArticleTodo';
 import list from './list';
 
 import './style.css';
+import Form from "../../layouts/base/components/form/Form";
 
 class ToDo extends React.Component {
     renderList = () => {
@@ -18,6 +19,7 @@ class ToDo extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Form/>
                 {this.renderList()}
             </React.Fragment>
         );
