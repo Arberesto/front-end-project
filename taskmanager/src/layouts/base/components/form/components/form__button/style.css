@@ -1,0 +1,7 @@
+.form__button {
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #50d5ad;
+    display: inline-block;
+}

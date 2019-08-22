@@ -10,7 +10,7 @@ class Done extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
-                <ArticleDone key={index} title={item.title} description={item.description} />
+                <ArticleDone key={index} title={item.title} description={item.description} id={item.id} />
             );
         });
     };

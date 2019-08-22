@@ -3,33 +3,36 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 import Article from '../article/Article';
+import ArticleButton from '../Article__Button/ArticleButton';
 
 
 export default class ArticleTodo extends React.Component {
-    render() {
+
+    handleOnClickPencil = () => {alert(this.props.id)};
+
+    handleOnClickTrash = () => {alert(this.props.id)};
+
+    handleOnClickCheckbox = () => {alert(this.props.id)};
+
+        render() {
         return (
             <article className="article">
-                <a href="#" className="article__link">
-                    <div className="article__checkbox article__icon"></div>
-                </a>
+                <ArticleButton onClick={this.handleOnClickCheckbox} className="article__checkbox"/>
                 <Article description={this.props.description} title={this.props.title}/>
-                <a href="#" className="article__link">
-                    <div className="article__pencil article__icon"></div>
-                </a>
-                <a href="#" className="article__link">
-                    <div className="article__trash article__icon"></div>
-                </a>
+                <ArticleButton onClick={this.handleOnClickPencil} className="article__pencil"/>
+                <ArticleButton onClick={this.handleOnClickTrash} className="article__trash"/>
             </article>
         );
     };
 };
-
 ArticleTodo.propTypes = {
+    id: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string
 };
 
 ArticleTodo.defaultProps = {
+    id: '',
     title: '',
     description: ''
 };

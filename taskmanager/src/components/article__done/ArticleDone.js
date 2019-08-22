@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 import Article from '../article/Article';
+import Button from "../Button/Button";
 
 export default class ArticleDone extends React.Component {
+
+    handleOnClickGalka = () => {alert(this.props.id)};
+    handleOnClickTrash = () => {alert(this.props.id)};
+
     render() {
         return (
             <article className="article">
-                <a href="#" className="article__link">
-                    <div className="article__galka article__icon"></div>
-                </a>
+                <Button onClick={this.handleOnClickGalka} className='article__galka'/>
                 <Article description={this.props.description} title={this.props.title}/>
-                <a href="#" className="article__link">
-                    <div className="article__trash article__icon"></div>
-                </a>
+                <Button onClick={this.handleOnClickTrash} className='article__trash'/>
             </article>
         );
     };
