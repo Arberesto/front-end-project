@@ -32,7 +32,7 @@ ArticleTodo.propTypes = {
 };
 
 ArticleTodo.defaultProps = {
-    id: '',
+    id: 'oraora',
     title: '',
     description: ''
 };

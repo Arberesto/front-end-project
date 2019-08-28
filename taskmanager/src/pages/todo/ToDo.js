@@ -11,7 +11,7 @@ class ToDo extends React.Component {
     renderList = () => {
         return list.data.map((item, index) => {
             return (
-                <ArticleToDo key={index} title={item.title} description={item.description} id={item.id} />
+                <ArticleToDo key={index} id={item.id} title={item.title} description={item.description}/>
             );
         });
     };

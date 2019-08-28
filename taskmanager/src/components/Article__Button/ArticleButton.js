@@ -4,19 +4,25 @@ import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 
 import './style.css';
+import ArticleTodo from "../article__todo/ArticleTodo";
 
 export default class ArticleButton extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Button onClick={this.handleOnClickCheckbox}
+                <Button onClick={this.props.onClick}
                         className={`article__icon${this.props.className ? ` ${this.props.className}` : ''}`}/>
             </React.Fragment>
         );
     };
 };
 
-Button.propTypes = {
+ArticleButton.propTypes = {
     onClick:PropTypes.node.isRequired,
     className:PropTypes.string
+};
+
+ArticleButton.defaultProps = {
+    onClick: () => {alert("error: empty OnClick")},
+    className:''
 };

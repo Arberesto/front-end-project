@@ -19,4 +19,10 @@ export default class Form__Button extends React.Component {
         );
     };
 
-}
+};
+
+Form__Button.propTypes = {
+    onClick:PropTypes.node.isRequired,
+    className:PropTypes.string,
+    text:PropTypes.string
+};
