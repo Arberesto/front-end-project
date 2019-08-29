@@ -13,7 +13,7 @@ export default class Form__Button extends React.Component {
             <React.Fragment>
                 <label>
                 <Button onClick = {this.props.onClick}
-                        className={`form__button${this.props.className ? ` ${this.props.className}` : ''}`} text = {this.props.text}>
+                        className={`form__button${this.props.className ? ` ${this.props.className}` : ''}`}  disabled={this.props.disabled} text = {this.props.text}>
                 </Button>
                 </label>
             </React.Fragment>
@@ -25,5 +25,6 @@ export default class Form__Button extends React.Component {
 Form__Button.propTypes = {
     onClick:PropTypes.node.isRequired,
     className:PropTypes.string,
+    disabled:PropTypes.bool,
     text:PropTypes.string
 };

@@ -9,7 +9,7 @@ export default class Form extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {task: '', buttonIs:'form__button_disabled'};
+        this.state = {task: ''};
         this.onChangeTask = this.onChangeTask.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -18,9 +18,11 @@ export default class Form extends React.Component {
         this.setState({task: event.target.value},
             () => {
             if (this.state.task === '') {
-                this.setState({buttonIs: 'form__button_disabled'});
+                document.getElementsByClassName('form__button')
+                    .item(0).setAttribute('disabled', 'disabled');
             } else {
-                this.setState({buttonIs: ''});
+                document.getElementsByClassName('form__button')
+                    .item(0).removeAttribute('disabled');
             }
         });
     }
@@ -34,6 +36,8 @@ export default class Form extends React.Component {
             "description":  this.state.task
             }, ...this.props.list]);
         this.setState({task: ''});
+        document.getElementsByClassName('form__button')
+            .item(0).setAttribute('disabled', 'disabled');
     }
 
     render() {
@@ -42,7 +46,7 @@ export default class Form extends React.Component {
               <form onSubmit={this.onSubmit} className='form'>
                   <input type="text" className='form__input' value={this.state.task}
                          onChange={this.onChangeTask} placeholder='Type your new task'/>
-                  <FormButton onClick={this.onSubmit} className={`${this.state.buttonIs}`} text='Create'/>
+                  <FormButton onClick={this.onSubmit} disabled={true} text='Create'/>
               </form>
           </React.Fragment>
         );
