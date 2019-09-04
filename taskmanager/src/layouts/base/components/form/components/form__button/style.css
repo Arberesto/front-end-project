@@ -2,12 +2,18 @@
     width: 130px;
     height: 30px;
     border-radius: 15px;
-    /*background: url("icons/create-btn-icon.png") no-repeat;*/
     background-color: #50d5ad;
     display: inline-block;
-    color: #282c34;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: sans-serif,"Roboto";
+    font-weight: 500;
 }
 
 .form__button:disabled {
     background-color: #bdbdbd;
+}
+
+.form__icon {
+    background: url("icons/create-btn-icon.png") no-repeat;
 }

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../../../../../../components/Button/Button';
 
 import './style.css';
+import ArticleButton from "../../../../../../components/Article__Button/ArticleButton";
 
 
 export default class Form__Button extends React.Component {
@@ -13,18 +14,19 @@ export default class Form__Button extends React.Component {
             <React.Fragment>
                 <label>
                 <Button onClick = {this.props.onClick}
-                        className={`form__button${this.props.className ? ` ${this.props.className}` : ''}`}  disabled={this.props.disabled} text = {this.props.text}>
+                        className={`form__button${this.props.className ? ` ${this.props.className}` : ''}`} type={this.props.type} disabled={this.props.disabled} value = {this.props.value}>
+                <ArticleButton className ={'form__icon'} disabled={true}/>
                 </Button>
                 </label>
             </React.Fragment>
         );
     };
-
 };
 
 Form__Button.propTypes = {
-    onClick:PropTypes.node.isRequired,
+    onClick:PropTypes.func,
+    type: PropTypes.string,
     className:PropTypes.string,
     disabled:PropTypes.bool,
-    text:PropTypes.string
+    value:PropTypes.string
 };

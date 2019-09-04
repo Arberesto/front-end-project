@@ -10,19 +10,18 @@ export default class ArticleButton extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Button onClick={this.props.onClick}
-                        className={`article__icon${this.props.className ? ` ${this.props.className}` : ''}`}/>
+                <Button onClick={this.props.onClick} type={this.props.type}
+                        className={`article__icon${this.props.className ? ` ${this.props.className}` : ''}`}
+                        disabled={this.props.disabled} value={this.props.value}/>
             </React.Fragment>
         );
     };
 };
 
 ArticleButton.propTypes = {
-    onClick:PropTypes.node.isRequired,
-    className:PropTypes.string
-};
-
-ArticleButton.defaultProps = {
-    onClick: () => {alert("error: empty OnClick")},
-    className:''
+    onClick:PropTypes.func,
+    type: PropTypes.string,
+    className:PropTypes.string,
+    disabled:PropTypes.bool,
+    value:PropTypes.string
 };

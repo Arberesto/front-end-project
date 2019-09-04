@@ -1,5 +1,4 @@
 .article__trash {
-    visibility: hidden;
     width: 10%;
     background: url("icons/trash.png") no-repeat;
 }
@@ -9,16 +8,16 @@
 }
 
 .article__galka {
-    visibility: hidden;
     background: url("icons/done_task_gray.png") no-repeat;
 }
 
-.article__galka:hover {
-    background: url("icons/done_task_gray.png") no-repeat;
-}
 
 .article {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.article .article__icon {
+    visibility: hidden;
 }
 
 .article:hover .article__icon {

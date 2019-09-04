@@ -37,7 +37,7 @@ export default class Form extends React.Component {
             }, ...this.props.list]);
         this.setState({task: ''});
         document.getElementsByClassName('form__button')
-            .item(0).setAttribute('disabled', 'disabled');
+            .item(0).setAttribute('disabled', 'true');
     }
 
     render() {
@@ -46,14 +46,16 @@ export default class Form extends React.Component {
               <form onSubmit={this.onSubmit} className='form'>
                   <input type="text" className='form__input' value={this.state.task}
                          onChange={this.onChangeTask} placeholder='Type your new task'/>
-                  <FormButton onClick={this.onSubmit} disabled={true} text='Create'/>
+                  <FormButton disabled={true} type={"submit"} value='Create'/>
               </form>
           </React.Fragment>
         );
     };
-}
+};
 
 Form.propTypes = {
-    onSubmitFrom: PropTypes.node.isRequired,
+    onSubmitFrom: PropTypes.func,
     list: PropTypes.node.isRequired
-}
+};
+
+

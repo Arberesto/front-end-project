@@ -4,39 +4,31 @@ import './style.css';
 
 export default class Button extends React.Component {
     render() {
-        if (this.props.disabled) {
-            return (
-                <React.Fragment>
-                    <button onClick={this.props.onClick}
-                            className={`button${this.props.className ? ` ${this.props.className}` : ''}`}
-                            disabled={"disabled"} value={`${this.props.text ? `${this.props.text}` : ``}`}>
-                    </button>
-                </React.Fragment>
-            );
-        } else {
-            return (
-                <React.Fragment>
-                    <button onClick={this.props.onClick}
-                            className={`button${this.props.className ? ` ${this.props.className}` : ''}`}
-                            value={`${this.props.text ? `${this.props.text}` : ``}`}>
-                    </button>
-                </React.Fragment>
-            );
-        }
+        return (
+            <React.Fragment>
+                <button onClick={this.props.onClick}
+                        className={`button${this.props.className ? ` ${this.props.className}` : ''}`}
+                        type = {this.props.type} disabled={this.props.disabled}>
+                    {this.props.value}
+                </button>
+            </React.Fragment>
+        );
     };
 };
 
 Button.propTypes = {
     onClick:PropTypes.func,
+    type: PropTypes.string,
     className:PropTypes.string,
     disabled:PropTypes.bool,
-    text:PropTypes.string
+    value:PropTypes.string
 };
 
 Button.defaultProps = {
+    type: 'button',
     className:'',
-    text: '',
-    disabled: ''
+    disabled: false,
+    value: ''
 };
 
 
