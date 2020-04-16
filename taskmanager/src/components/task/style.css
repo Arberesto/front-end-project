@@ -1,0 +1,43 @@
+.task-box {
+    font-family: Roboto, sans-serif;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 13px 0 16px 11px;
+    height: 15px;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.task-box:hover {
+    box-shadow: 0 1px 10px rgba(83, 238, 178, 0.8);
+    transition: 0.1s;
+}
+
+.task-box__action-buttons {
+    float: right;
+    visibility: hidden;
+}
+
+.task-box:hover .task-box__action-buttons {
+    visibility: visible;
+}
+
+.task-box:last-child {
+    margin-bottom: 0;
+}
+
+.task-box__description {
+    font-size: 15px;
+    color: #303030;
+    font-weight: 300;
+    margin: 0;
+    display: inline-block;
+    padding-left: 10px;
+    width: calc(100% - 97px);
+    height: 17px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../../../../../../components/Button/Button';
+import Button from '../../../Button/Button';
 
 import './style.css';
 import ArticleButton from "../../../../../../components/Article__Button/ArticleButton";

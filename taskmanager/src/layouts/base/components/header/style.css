@@ -1,24 +1,28 @@
 .header {
     background: linear-gradient(154deg, #96efc0 0%, #73baff 100%);
-    font-family: Helvetica, sans-serif;
+    height: 61px;
+    width: 100%;
 }
 .header__content {
     box-sizing: border-box;
-    max-width: 960px;
-    padding: 0;
-    margin: 0;
+    max-width: 1366px;
+    padding: 18px 0 0 10px;
+    margin: 0 auto;
 }
 .header__logo {
-    display: inline-block;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
-    text-decoration: none;
-    width: 20%;
+    padding-left: 61px;
+    padding-top: 10px;
 }
 
 .header__username {
-    display: inline-block;
-    padding-left: 100px;
-    width: 5%;
+    font-size: 16px;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 2px 80px 0 0;
+    text-decoration: none;
+    float:right;
 }

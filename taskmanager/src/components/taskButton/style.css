@@ -1,0 +1,48 @@
+.task__button {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    border: none;
+    display: inline-block;
+    outline: none;
+}
+
+.task__button_status {
+    background: url('./images/task-button-status.svg') no-repeat;
+    margin-left: 1px;
+}
+
+.task__button_done {
+    background: url('./images/task-button-done.svg') no-repeat;
+    margin-left: 1px;
+}
+
+.task__button_status:hover {
+    background: url("images/task-button-status-hover.svg") center no-repeat;
+    transition: 0.1s;
+}
+
+.task__button_edit {
+    background: url('./images/task-button-edit.svg') center no-repeat;
+    margin-right: 21px;
+}
+
+.task__button_edit:hover {
+    background: url('./images/task-button-edit-hover.svg') center no-repeat;
+    transition: 0.1s;
+}
+
+.task__button_delete {
+    background: url('./images/task-button-delete.svg') center no-repeat;
+    margin-right: 22px;
+}
+
+.task__button_delete:hover {
+    background: url('./images/task-button-delete-hover.svg') center no-repeat;
+    transition: 0.1s;
+}
+
+.task__button_send {
+    background: url('./images/task-button-edit-finish.svg') center no-repeat;
+    transition: 0.1s;
+}

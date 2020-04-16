@@ -1,4 +1,17 @@
 
+.side-bar {
+    width: 100%;
+}
+
+.side-bar__list {
+    margin: 0;
+    list-style: none;
+}
+
+.side-bar__item {
+
+}
+
 .element {
     font-size: 18px;
     color: #979797;
@@ -9,53 +22,32 @@
 }
 
 .element__icon {
-    display: inline-block;
-    width: 90%;
-    height: 30px;
+    background: top left no-repeat;
+    background-size: 20px 20px;
+    padding-left: 26px;
+    color: #979797;
+    font-family: "Roboto", serif;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
 }
 
-.element__todo::before {
-    content: '';
-    position: absolute;
-    left: 0.5em;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    margin: 0;
-    background: url("images/todo_gray.png") no-repeat;
+.element__todo {
+    background-image: url("images/todo_gray.svg");
 }
 
-.element__done::before {
-    content: '';
-    position: absolute;
-    left: 0.5em;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    margin: 0;
-    background: url("images/done_gray.png") no-repeat;;
+.element__done {
+    background-image: url("images/done_gray.svg");
 }
 
-.element_active.element__todo::before {
-    content: '';
-    position: absolute;
-    left: 0.5em;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    margin: 0;
-    background: url("images/todo_blue.png") no-repeat;
+element-todo_active {
+    color: #73baff;
+    background-image: url("images/todo_blue.svg") !important;
 }
 
-.element_active.element__done::before {
-    content: '';
-    position: absolute;
-    left: 0.5em;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    margin: 0;
-    background: url("images/done_blue.png") no-repeat;
+element-done_active {
+    color: #73baff;
+    background-image: url("images/done_blue.svg") !important;
 }
 
 

@@ -1,0 +1,7 @@
+.done-page .task-box:hover .task__button_edit {
+    display: none;
+}
+
+.done-page .task__button_status{
+    display: none;
+}
