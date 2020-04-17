@@ -2,11 +2,12 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import Task from '../../components/task/Task';
 import Form from '../../components/form/Form';
-import SubmitButton from "../../components/submitButton/SubmitButton";
-import UploadButton from "../../components/uploadButton/UploadButton";
+import SubmitButton from "../../components/submit-button/SubmitButton";
+import UploadButton from "../../components/upload-button/UploadButton";
 
 import list from './list';
 import './style.css';
+import SortButton from "../../components/sort-order-button/SortButton";
 
 class ToDo extends React.Component {
 
@@ -62,7 +63,7 @@ class ToDo extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div>
+                <div className={'todo-page'}>
                     <div className='main__content-header'>
                         <form className='form' onSubmit={this.onSubmit}>
                             <Form
@@ -86,6 +87,7 @@ class ToDo extends React.Component {
                             className="csv-upload-button"
                             activeClassName="upload-button_enabled"
                         />
+                        <SortButton value="Sort by creation date"/>
                     </div>
                     {this.renderList(this.state.tasksList)}
                 </div>

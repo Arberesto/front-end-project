@@ -23,6 +23,15 @@
     font-weight: 500;
     color: #ffffff;
     margin: 2px 80px 0 0;
+    position: relative;
     text-decoration: none;
     float:right;
+}
+.header__username:after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    margin-left: 10px;
+    background: url("./resources/exit.svg") no-repeat;
 }

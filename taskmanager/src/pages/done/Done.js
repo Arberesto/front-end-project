@@ -1,14 +1,11 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import ArticleDone from '../../components/article__done/ArticleDone';
 
-import list from './list';
-
-import './style.css';
 import Task from "../../components/task/Task";
-import Form from "../../components/form/Form";
-import SubmitButton from "../../components/submitButton/SubmitButton";
-import UploadButton from "../../components/uploadButton/UploadButton";
+import list from './list';
+import './style.css';
+import SortButton from "../../components/sort-order-button/SortButton";
+
 
 class Done extends React.Component {
 
@@ -63,8 +60,9 @@ class Done extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div>
+                <div className={'done-page'}>
                     <div className='main__content-header'>
+                        <SortButton value="Sort by done date"/>
                     </div>
                 {this.renderList(this.state.tasksList)}
                 </div>

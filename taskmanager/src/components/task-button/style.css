@@ -5,6 +5,7 @@
     border: none;
     display: inline-block;
     outline: none;
+    margin: auto 0;
 }
 
 .task__button_status {

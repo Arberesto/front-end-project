@@ -1,4 +1,5 @@
 .main__content-header {
+    border: 1px black solid;
 }
 
 .todo-page .task__button_done {

@@ -8,12 +8,13 @@
     border-radius: 15px;
     font-size: 15px;
     color:#ffffff;
-    box-shadow: 0px 2px 4px rgba(116, 187, 253, 0.3);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(116, 187, 253, 0.3);
     font-family: "Roboto", serif;
     font-weight: 500;
-    padding-left: 30px;
-    margin-left: 30px;
     display: inline-block;
+    padding-right: 2px;
+    margin-left: 10px;
 }
 
 .upload-button:disabled {
@@ -23,6 +24,7 @@
 
 .upload-button:enabled {
     background-color: #74BBFD;
+    transition: 0.3s;
 }
 
 .upload-button:hover {

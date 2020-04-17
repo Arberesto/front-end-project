@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-import TaskButton from '../taskButton/TaskButton';
+import TaskButton from '../task-button/TaskButton';
 
 export default class Task extends React.Component {
     constructor(props) {
