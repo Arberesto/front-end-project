@@ -25,6 +25,7 @@
 .task__button_edit {
     background: url('./images/task-button-edit.svg') center no-repeat;
     margin-right: 21px;
+    margin-left: 1px;
 }
 
 .task__button_edit:hover {
@@ -35,6 +36,7 @@
 .task__button_delete {
     background: url('./images/task-button-delete.svg') center no-repeat;
     margin-right: 22px;
+    margin-left: 1px;
 }
 
 .task__button_delete:hover {

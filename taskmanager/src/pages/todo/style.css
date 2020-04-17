@@ -1,3 +1,11 @@
+.main__content-header {
+}
+
 .todo-page .task__button_done {
     display: none;
 }
+
+.form {
+    display: inline-block;
+}
+

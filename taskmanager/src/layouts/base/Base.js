@@ -15,9 +15,7 @@ class Base extends React.Component {
                 <main className='main'>
                     <SideBar className='main__side-bar'/>
                     <section className='main__content'>
-                        <div className='main__task-list'>
                         {this.props.children}
-                        </div>
                     </section>
                 </main>
             </React.Fragment>

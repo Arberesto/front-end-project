@@ -21,15 +21,15 @@ export default class Task extends React.Component {
         alert(this.props.taskId);
     };
 
-    onClickDeleteTask = (taskId, status) => {
+    onClickDeleteTask = () => {
         alert(this.props.taskId);
     };
 
-    onClickFinishTask = (taskId) => {
+    onClickFinishTask = () => {
         alert(this.props.taskId);
     };
 
-    onClickDoneTask = (taskId) => {
+    onClickDoneTask = () => {
         alert(this.props.taskId);
     };
 
@@ -64,9 +64,6 @@ Task.propTypes = {
     taskId: PropTypes.string,
     status: PropTypes.string,
     text: PropTypes.string,
-    updateTask: PropTypes.func,
-    getTaskList: PropTypes.func,
-    deleteTask: PropTypes.func,
     disabledEdit: PropTypes.bool
 };
 

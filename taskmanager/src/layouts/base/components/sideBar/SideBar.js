@@ -12,10 +12,10 @@ export default class SideBar extends React.Component {
                 <nav>
                     <ul className='side-bar__list'>
                         <li className='side-bar__item'>
-                    <NavLink exact to="/" activeClassName="element-done_active" className="element__icon element__todo">Todo</NavLink>
+                    <NavLink exact to="/todo" activeClassName="element-todo_active" className="element__icon element__todo">Todo</NavLink>
                         </li>
                         <li className='side-bar__item'>
-                    <NavLink to="/done" activeClassName="element-todo_active" className="element__icon element__done">Done</NavLink>
+                    <NavLink to="/done" activeClassName="element-done_active" className="element__icon element__done">Done</NavLink>
                         </li>
                     </ul>
                 </nav>

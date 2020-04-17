@@ -40,12 +40,12 @@
     background-image: url("images/done_gray.svg");
 }
 
-element-todo_active {
+.element-todo_active {
     color: #73baff;
     background-image: url("images/todo_blue.svg") !important;
 }
 
-element-done_active {
+.element-done_active {
     color: #73baff;
     background-image: url("images/done_blue.svg") !important;
 }

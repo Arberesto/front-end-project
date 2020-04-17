@@ -1,4 +1,3 @@
-
 .button {
     outline: none;
     border: none;
@@ -15,18 +14,19 @@
     font-weight: 500;
     position: relative;
     padding-right: 2px;
+    margin-left: 10px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
 .form__button:disabled {
     background-color: #bdbdbd;
-    box-shadow: 0 2px 10px 0 rgba(189, 189, 189, 0.25);
+    box-shadow: 0px 2px 4px rgba(69, 211, 168, 0.3);
     transition: 0.3s;
 }
 
 .form__button:enabled {
     background-color: #50d5ad;
-    box-shadow: 0 2px 10px 0 rgba(80, 213, 173, 0.25);
+    box-shadow: 0px 2px 4px rgba(69, 211, 168, 0.3);
     transition: 0.3s;
 }
 
@@ -38,36 +38,4 @@
     top: 10px;
     left: 21px;
     background: url("./images/create-task-icon.svg") no-repeat;
-}
-
-.login-form__button-submit {
-    font-size: 17px;
-    color: #ffffff;
-    font-weight: 400;
-    text-align: center;
-
-    width: 100%;
-    height: 40px;
-    display: block;
-
-    border-radius: 20px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.37);
-
-    margin: 57px auto 0 auto;
-}
-
-.login-form__button-submit:disabled {
-    background: #bdbdbd;
-    transition: 0.3s;
-    cursor: default;
-}
-
-.login-form__button-submit:enabled {
-    background-color: #74bbfd;
-    transition: 0.3s;
-}
-
-.login-form__button-submit:enabled:hover {
-    background-color: #5791fd;
-    transition: 0.3s;
 }

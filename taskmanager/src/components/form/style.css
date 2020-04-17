@@ -1,6 +1,5 @@
-.form {
-    margin:0 0 10px 0;
-    padding: 0;
+.input {
+    outline: none;
 }
 
 .form__input {
@@ -8,11 +7,10 @@
     color: #939393;
     font-family: "Roboto",sans-serif;
     font-weight: 300;
-    display: inline-flex;
-    vertical-align: bottom;
-    width: 40%;
-    margin: 0 10px 0 0;
+    margin: 0 5px 20px 0;
+    width: 398px;
     padding: 0 0 5px 0;
-    border:0;
+    border-width: 0 0 1px;
+    border-color: #45d3a8;
     border-bottom: 1.3px solid #45d3a8;
 }
