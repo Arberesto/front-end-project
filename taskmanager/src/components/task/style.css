@@ -15,9 +15,10 @@
 }
 
 .task-box__action-buttons {
+    height: 20px;
     float: right;
     visibility: hidden;
-    border: 1px black solid;
+    display: flex;
 }
 
 .task-box:hover .task-box__action-buttons {

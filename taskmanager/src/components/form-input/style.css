@@ -4,7 +4,7 @@
 
 .form__input {
     font-size: 15px;
-    color: #939393;
+    color: #626262;
     font-family: "Roboto",sans-serif;
     font-weight: 300;
     margin: 0 5px 20px 0;
@@ -13,4 +13,8 @@
     border-width: 0 0 1px;
     border-color: #45d3a8;
     border-bottom: 1.3px solid #45d3a8;
+}
+
+.form__input:empty {
+    color: #939393;
 }

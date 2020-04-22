@@ -1,0 +1,9 @@
+.logout-button {
+    margin-top: 5px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border: none;
+    display: inline-block;
+    background: url("./images/exit.svg") no-repeat;
+}

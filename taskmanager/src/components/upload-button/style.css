@@ -13,12 +13,12 @@
     font-family: "Roboto", serif;
     font-weight: 500;
     display: inline-block;
-    padding-right: 2px;
+    padding: 0 2px 0 20px;
     margin-left: 10px;
 }
 
 .upload-button:disabled {
-    background-color: #74BBFD;
+    background-color: #78C2F6;
     transition: 0.3s;
 }
 
@@ -27,7 +27,10 @@
     transition: 0.3s;
 }
 
-.upload-button:hover {
+.upload-button:hover:enabled {
+    background-color:#49A7FF;
+}
+.upload-button:active {
     background-color:#49A7FF;
 }
 
@@ -36,6 +39,7 @@
     height: 100%;
     position: absolute;
     content: '';
+    margin-right: 10px;
     top: 8px;
     left: 21px;
     background: url("./images/cloud.svg") no-repeat;

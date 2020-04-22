@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import Task from '../../components/task/Task';
-import Form from '../../components/form/Form';
+import FormInput from '../../components/form-input/formInput';
 import SubmitButton from "../../components/submit-button/SubmitButton";
 import UploadButton from "../../components/upload-button/UploadButton";
 
@@ -32,6 +32,14 @@ class ToDo extends React.Component {
         ;
     };
 
+
+    upload = (event) => {
+      alert("Upload");
+    };
+
+    changeOrder = (event) => {
+        alert("Order reversed");
+    };
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -66,7 +74,7 @@ class ToDo extends React.Component {
                 <div className={'todo-page'}>
                     <div className='main__content-header'>
                         <form className='form' onSubmit={this.onSubmit}>
-                            <Form
+                            <FormInput
                                 value={this.state.text}
                                 className="form__input"
                                 placeHolder="Type your new task"
@@ -84,10 +92,10 @@ class ToDo extends React.Component {
                         </form>
                         <UploadButton
                             value="Upload CSV"
+                            onClick={this.upload}
                             className="csv-upload-button"
-                            activeClassName="upload-button_enabled"
                         />
-                        <SortButton value="Sort by creation date"/>
+                        <SortButton onClick={this.changeOrder} value="Sort by creation date"/>
                     </div>
                     {this.renderList(this.state.tasksList)}
                 </div>

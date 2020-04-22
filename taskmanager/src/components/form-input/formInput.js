@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import './style.css';
 
-export default class Form extends React.Component {
+export default class FormInput extends React.Component {
     render() {
         const {className, value, type, name, placeHolder, onChange, id, required, disabled} = this.props;
         return (
@@ -23,7 +23,7 @@ export default class Form extends React.Component {
     };
 };
 
-Form.defaultProps = {
+FormInput.defaultProps = {
     className: '',
     type: 'text',
     name: '',
@@ -35,7 +35,7 @@ Form.defaultProps = {
     disabled: false
 };
 
-Form.propTypes = {
+FormInput.propTypes = {
     className: PropTypes.string,
     value: PropTypes.string,
     type: PropTypes.string,

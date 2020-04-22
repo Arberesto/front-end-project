@@ -4,8 +4,8 @@
     width: 100%;
 }
 .header__content {
-    box-sizing: border-box;
     max-width: 1366px;
+    box-sizing: border-box;
     padding: 18px 0 0 10px;
     margin: 0 auto;
 }
@@ -21,17 +21,19 @@
     font-size: 16px;
     font-family: "Roboto", serif;
     font-weight: 500;
+    display: inline-block;
     color: #ffffff;
-    margin: 2px 80px 0 0;
-    position: relative;
     text-decoration: none;
-    float:right;
+    margin: 5px 10px 0 0;
+    text-align: center;
 }
-.header__username:after {
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    margin-left: 10px;
-    background: url("./resources/exit.svg") no-repeat;
+
+.header__logout-button {
+}
+
+.header__right-corner {
+    height: 30px;
+    display: flex;
+    float: right;
+
 }

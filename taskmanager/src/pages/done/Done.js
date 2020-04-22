@@ -30,6 +30,10 @@ class Done extends React.Component {
         ;
     };
 
+    changeOrder = (event) => {
+        alert("Order reversed");
+    };
+
     onSubmit = (event) => {
         event.preventDefault();
         this.setState(
@@ -62,7 +66,7 @@ class Done extends React.Component {
             <React.Fragment>
                 <div className={'done-page'}>
                     <div className='main__content-header'>
-                        <SortButton value="Sort by done date"/>
+                        <SortButton onClick={this.changeOrder} value="Sort by done date"/>
                     </div>
                 {this.renderList(this.state.tasksList)}
                 </div>
