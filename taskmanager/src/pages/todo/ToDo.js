@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 import Task from '../../components/task/Task';
 import FormInput from '../../components/form-input/formInput';
 import SubmitButton from "../../components/submit-button/SubmitButton";
 import UploadButton from "../../components/upload-button/UploadButton";
-
-import list from './list';
-import './style.css';
 import SortButton from "../../components/sort-order-button/SortButton";
+import createTask from "../../actions/taskList/createTask";
+import getTaskList from "../../actions/taskList/getTaskList";
+
+import './style.css';
 
 class ToDo extends React.Component {
 
@@ -16,42 +20,36 @@ class ToDo extends React.Component {
         this.state = {
             tasksList: [],
             text: ''
-        }
+        };
     }
 
     componentDidMount() {
-        this.setState({
-            tasksList: list.data
-        });
+        this.props.getTaskList();
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.tasksList !== prevProps.tasksList) {
+            this.setState({
+                tasksList: this.props.tasksList
+            })
+        }
+    }
+
 
     onChange = (event) => {
         this.setState({
             text: event.target.value
-        })
-        ;
+        });
     };
 
-
-    upload = (event) => {
-      alert("Upload");
-    };
-
-    changeOrder = (event) => {
-        alert("Order reversed");
-    };
 
     onSubmit = (event) => {
         event.preventDefault();
-        this.setState(
-            {
-                text: '',
-                tasksList: [{id: "some-id", text: this.state.text}, ...this.state.tasksList]
-            },
-            () => {
-                list.data = this.state.tasksList;
-            }
-        );
+        this.props.createTask({text: `${this.state.text}`})
+            .then(() => {
+                    this.props.getTaskList();
+                }
+            )
     };
 
     renderList = (tasksList) => {
@@ -64,8 +62,17 @@ class ToDo extends React.Component {
                     text={item.text}
                     status={'inbox'}
                 />
-            );
-        });
+            )
+        })
+    };
+
+
+    upload = (event) => {
+        alert("Upload");
+    };
+
+    changeOrder = (event) => {
+        alert("Order reversed");
     };
 
     render() {
@@ -100,14 +107,24 @@ class ToDo extends React.Component {
                     {this.renderList(this.state.tasksList)}
                 </div>
             </React.Fragment>
-        );
-    };
+        )
+    }
+
 }
 
+ToDo.propTypes = {
+    createTask: PropTypes.func,
+    getTaskList: PropTypes.func,
+    tasksList: PropTypes.array
+};
+
 const mapDispatchToProps = (dispatch) => ({
+    getTaskList: bindActionCreators(getTaskList, dispatch),
+    createTask: bindActionCreators(createTask, dispatch)
 });
 
 const mapStateToProps = (state) => ({
+    tasksList: state.getTaskListReducer.tasksList
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDo);;
+export default connect(mapStateToProps, mapDispatchToProps)(ToDo)

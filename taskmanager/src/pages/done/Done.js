@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Task from "../../components/task/Task";
-import list from './list';
-import './style.css';
-import SortButton from "../../components/sort-order-button/SortButton";
+import {bindActionCreators} from 'redux';
 
+import Task from "../../components/task/Task";
+import SortButton from "../../components/sort-order-button/SortButton";
+import createTask from "../../actions/taskList/createTask";
+import getTaskList from "../../actions/taskList/getTaskList";
+
+import './style.css';
 
 class Done extends React.Component {
 
@@ -13,13 +17,19 @@ class Done extends React.Component {
         this.state = {
             tasksList: [],
             text: ''
-        }
+        };
     }
 
     componentDidMount() {
-        this.setState({
-            tasksList: list.data
-        });
+        this.props.getTaskList();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.tasksList !== prevProps.tasksList) {
+            this.setState({
+                tasksList: this.props.tasksList
+            });
+        }
     }
 
     onChange = (event) => {
@@ -35,15 +45,11 @@ class Done extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        this.setState(
-            {
-                text: '',
-                tasksList: [{id: "some-id", text: this.state.text}, ...this.state.tasksList]
-            },
-            () => {
-                list.data = this.state.tasksList;
-            }
-        );
+        this.props.createTask({text: `${this.state.text}`})
+            .then(() => {
+                    this.props.getTaskList();
+                }
+            )
     };
 
     renderList = (tasksList) => {
@@ -74,10 +80,19 @@ class Done extends React.Component {
     };
 }
 
+Done.propTypes = {
+    createTask: PropTypes.func,
+    getTaskList: PropTypes.func,
+    tasksList: PropTypes.array
+};
+
 const mapDispatchToProps = (dispatch) => ({
+    getTaskList: bindActionCreators(getTaskList, dispatch),
+    createTask: bindActionCreators(createTask, dispatch)
 });
 
 const mapStateToProps = (state) => ({
+    tasksList: state.getTaskListReducer.tasksList
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Done);

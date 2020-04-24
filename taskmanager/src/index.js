@@ -1,24 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
 import {Route, BrowserRouter, Switch, Redirect} from "react-router-dom";
-import './index.css';
+import {Provider} from 'react-redux'
+import store from './store/store';
 import Base from './layouts/base/Base';
 import Done from "./pages/done/Done";
-import Todo from "./pages/todo/ToDo";
-
+import ToDo from "./pages/todo/ToDo";
+import './index.css';
 
 ReactDOM.render(
     <Provider store={store}>
-    <BrowserRouter>
-    <Base>
+        <BrowserRouter>
             <Switch>
-                <Route exact path="/todo" render={Todo} />
-                <Route exact path="/done" render={Done} />
+                <Route path="/" render={() => (
+                    <Base>
+                        <Route exact path="/" component={ToDo}/>
+                        <Route exact path="/todo" component={ToDo}/>
+                        <Route path="/done" component={Done}/>
+                    </Base>
+                )}/>
                 <Redirect to={'todo'}/>
             </Switch>
-
-    </Base>
-    </BrowserRouter>
-    </Provider>,document.getElementById('root')
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
 );
