@@ -1,6 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
-
+import {connect} from 'react-redux';
 import Task from "../../components/task/Task";
 import list from './list';
 import './style.css';
@@ -75,4 +74,10 @@ class Done extends React.Component {
     };
 }
 
-export default withRouter(Done);
+const mapDispatchToProps = (dispatch) => ({
+});
+
+const mapStateToProps = (state) => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Done);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {connect} from 'react-redux';
 import Task from '../../components/task/Task';
 import FormInput from '../../components/form-input/formInput';
 import SubmitButton from "../../components/submit-button/SubmitButton";
@@ -104,4 +104,10 @@ class ToDo extends React.Component {
     };
 }
 
-export default withRouter(ToDo);
+const mapDispatchToProps = (dispatch) => ({
+});
+
+const mapStateToProps = (state) => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToDo);;
