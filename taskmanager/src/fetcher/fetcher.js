@@ -13,8 +13,7 @@ export function getTaskList(url, status) {
         method: 'GET',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE,
-            'Authorization': `Bearer ${JWT}`
+            'Content-Type': CONTENT_TYPE_VALUE
         }),
 
     })

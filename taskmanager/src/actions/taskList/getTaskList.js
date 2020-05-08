@@ -2,9 +2,9 @@ import * as fetcher from '../../fetcher/fetcher';
 import * as types from './actionTypes';
 import * as urls from '../urlAPI';
 
-export default function getTaskList() {
+export default function getTaskList(status) {
     return (dispatch) => {
-        return fetcher.getTaskList(urls.URL_GET_TASK_LIST, 'inbox')
+        return fetcher.getTaskList(urls.URL_GET_TASK_LIST, status)
             .then(response => {
                 dispatch({
                     type: types.GET_TASK_LIST_SUCCESS,

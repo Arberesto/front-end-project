@@ -24,7 +24,7 @@ class ToDo extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getTaskList();
+        this.props.getTaskList('inbox');
     }
 
     componentDidUpdate(prevProps) {
@@ -47,7 +47,7 @@ class ToDo extends React.Component {
         event.preventDefault();
         this.props.createTask({text: `${this.state.text}`})
             .then(() => {
-                    this.props.getTaskList();
+                    this.props.getTaskList('inbox');
                 }
             )
     };
@@ -67,11 +67,11 @@ class ToDo extends React.Component {
     };
 
 
-    upload = (event) => {
+    upload = () => {
         alert("Upload");
     };
 
-    changeOrder = (event) => {
+    changeOrder = () => {
         alert("Order reversed");
     };
 

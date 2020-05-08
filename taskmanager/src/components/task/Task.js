@@ -5,11 +5,12 @@ import {bindActionCreators} from 'redux';
 
 import updateTask from "../../actions/taskList/updateTask";
 import deleteTask from "../../actions/taskList/deleteTask";
+import getTaskList from "../../actions/taskList/getTaskList";
 import './style.css';
 
 import TaskButton from '../task-button/TaskButton';
 
-export default class Task extends React.Component {
+class Task extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,11 +35,25 @@ export default class Task extends React.Component {
 
 
     onClickFinishTask = () => {
-        alert(this.props.taskId);
+        const body = {
+            status: "done"
+        };
+
+        this.props.updateTask(this.props.taskId, body)
+            .then(() => {
+                this.props.getTaskList('inbox');
+            });
     };
 
-    onClickDoneTask = () => {
-        alert(this.props.taskId);
+    onClickRestartTask = () => {
+        const body = {
+            status: "inbox"
+        };
+
+        this.props.updateTask(this.props.taskId, body)
+            .then(() => {
+                this.props.getTaskList('done');
+            });
     };
 
     render() {
@@ -49,7 +64,7 @@ export default class Task extends React.Component {
                     className={"task__button_status"}
                 />
                 <TaskButton
-                    onClick={() => this.onClickDoneTask(this.props.taskId)}
+                    onClick={() => this.onClickRestartTask(this.props.taskId)}
                     className={"task__button_done"}
                 />
                 <p className="task-box__description">{this.props.text}</p>
@@ -59,7 +74,7 @@ export default class Task extends React.Component {
                         className={this.state.classButtonEdit}
                     />
                     <TaskButton
-                        onClick={() => this.onClickDeleteTask(this.props.taskId)}
+                        onClick={() => this.onClickDeleteTask(this.props.taskId,this.props.status)}
                         className={"task__button_delete"}
                     />
                 </div>
@@ -72,17 +87,21 @@ Task.propTypes = {
     taskId: PropTypes.string,
     status: PropTypes.string,
     text: PropTypes.string,
-    disabledEdit: PropTypes.bool
+    disabledEdit: PropTypes.bool,
+    updateTask: PropTypes.func,
+    getTaskList: PropTypes.func,
+    deleteTask: PropTypes.func
 };
 
 Task.defaultProps = {
     taskId: '',
     status: '',
-    text: '',
+    text: ''
 };
 
 const mapDispatchToProps = (dispatch) => ({
     deleteTask: bindActionCreators(deleteTask, dispatch),
+    getTaskList: bindActionCreators(getTaskList, dispatch),
     updateTask: bindActionCreators(updateTask, dispatch)
 });
 

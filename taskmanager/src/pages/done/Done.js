@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux';
 import Task from "../../components/task/Task";
 import SortButton from "../../components/sort-order-button/SortButton";
 import createTask from "../../actions/taskList/createTask";
-import getTaskListDone from "../../actions/taskList/getTaskListDone";
+import getTaskList from "../../actions/taskList/getTaskList";
 
 import './style.css';
 
@@ -21,7 +21,7 @@ class Done extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getTaskList();
+        this.props.getTaskList('done');
     }
 
     componentDidUpdate(prevProps) {
@@ -47,7 +47,7 @@ class Done extends React.Component {
         event.preventDefault();
         this.props.createTask({text: `${this.state.text}`})
             .then(() => {
-                    this.props.getTaskList();
+                    this.props.getTaskList('done');
                 }
             )
     };
@@ -87,7 +87,7 @@ Done.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getTaskList: bindActionCreators(getTaskListDone, dispatch),
+    getTaskList: bindActionCreators(getTaskList, dispatch),
     createTask: bindActionCreators(createTask, dispatch)
 });
 

@@ -16,10 +16,10 @@ ReactDOM.render(
                     <Base>
                         <Route exact path="/" component={ToDo}/>
                         <Route exact path="/todo" component={ToDo}/>
-                        <Route path="/done" component={Done}/>
+                        <Route exact path="/done" component={Done}/>
                     </Base>
                 )}/>
-                <Redirect to={'todo'}/>
+                <Redirect to={'/'}/>
             </Switch>
         </BrowserRouter>
     </Provider>,
