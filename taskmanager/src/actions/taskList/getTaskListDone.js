@@ -2,18 +2,18 @@ import * as fetcher from '../../fetcher/fetcher';
 import * as types from './actionTypes';
 import * as urls from '../urlAPI';
 
-export default function createTask(task) {
+export default function getTaskList() {
     return (dispatch) => {
-        return fetcher.createTask(urls.URL_GET_TASK, task)
+        return fetcher.getTaskList(urls.URL_GET_TASK_LIST, 'done')
             .then(response => {
                 dispatch({
-                    type: types.CREATE_TASK_SUCCESS,
+                    type: types.GET_TASK_LIST_SUCCESS,
                     tasksList: response.tasks
                 });
             })
             .catch(error => {
                 dispatch({
-                    type: types.CREATE_TASK_ERROR,
+                    type: types.GET_TASK_LIST_ERROR,
                     error: error
                 });
             })

@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
+import updateTask from "../../actions/taskList/updateTask";
+import deleteTask from "../../actions/taskList/deleteTask";
 import './style.css';
 
 import TaskButton from '../task-button/TaskButton';
@@ -21,9 +25,13 @@ export default class Task extends React.Component {
         alert(this.props.taskId);
     };
 
-    onClickDeleteTask = () => {
-        alert(this.props.taskId);
+    onClickDeleteTask = (taskId, status) => {
+        this.props.deleteTask(taskId)
+            .then(() => {
+                this.props.getTaskList(status);
+            })
     };
+
 
     onClickFinishTask = () => {
         alert(this.props.taskId);
@@ -51,7 +59,7 @@ export default class Task extends React.Component {
                         className={this.state.classButtonEdit}
                     />
                     <TaskButton
-                        onClick={() => this.onClickDeleteTask(this.props.taskId, this.props.status)}
+                        onClick={() => this.onClickDeleteTask(this.props.taskId)}
                         className={"task__button_delete"}
                     />
                 </div>
@@ -72,3 +80,12 @@ Task.defaultProps = {
     status: '',
     text: '',
 };
+
+const mapDispatchToProps = (dispatch) => ({
+    deleteTask: bindActionCreators(deleteTask, dispatch),
+    updateTask: bindActionCreators(updateTask, dispatch)
+});
+
+const mapStateToProps = () => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Task);

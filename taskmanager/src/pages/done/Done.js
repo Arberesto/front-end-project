@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux';
 import Task from "../../components/task/Task";
 import SortButton from "../../components/sort-order-button/SortButton";
 import createTask from "../../actions/taskList/createTask";
-import getTaskList from "../../actions/taskList/getTaskList";
+import getTaskListDone from "../../actions/taskList/getTaskListDone";
 
 import './style.css';
 
@@ -87,7 +87,7 @@ Done.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getTaskList: bindActionCreators(getTaskList, dispatch),
+    getTaskList: bindActionCreators(getTaskListDone, dispatch),
     createTask: bindActionCreators(createTask, dispatch)
 });
 

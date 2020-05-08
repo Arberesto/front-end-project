@@ -8,13 +8,15 @@ function checkStatus(response) {
     throw new Error(response.statusText);
 }
 
-export function getTaskList(url) {
-    return fetch(url, {
+export function getTaskList(url, status) {
+    return fetch(url + status, {
         method: 'GET',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE
-        })
+            'Content-Type': CONTENT_TYPE_VALUE,
+            'Authorization': `Bearer ${JWT}`
+        }),
+
     })
         .then((response) => checkStatus(response))
         .then((response) =>
@@ -36,6 +38,36 @@ export function createTask(url, body) {
     })
         .then((response) => checkStatus(response))
         .then((response) => response.json())
+        .catch((error) => {
+            return error;
+        });
+}
+
+export function deleteTask(url, task) {
+    return fetch(url + task, {
+        method: 'DELETE',
+        headers: new Headers({
+            'Accept': CONTENT_TYPE_VALUE,
+            'Content-Type': CONTENT_TYPE_VALUE
+        }),
+    })
+        .then((response) => checkStatus(response))
+        .then((response) => response.json())
+        .catch((error) => {
+            return error;
+        });
+}
+
+export function updateTask(url, body) {
+    return fetch(url, {
+        method: 'PATCH',
+        headers: new Headers({
+            'Accept': CONTENT_TYPE_VALUE,
+            'Content-Type': CONTENT_TYPE_VALUE
+        }),
+        body: JSON.stringify(body)
+    })
+        .then((response) => checkStatus(response))
         .catch((error) => {
             return error;
         });
