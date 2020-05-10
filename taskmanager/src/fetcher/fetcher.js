@@ -1,6 +1,8 @@
 const CONTENT_TYPE_VALUE = 'application/json';
-
-function checkStatus(response) {
+const  JWT = 'token';
+localStorage.setItem(JWT,
+    "enter here active JWT that you'll get after sighing in, then build");
+    function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
         return response;
     }
@@ -13,7 +15,8 @@ export function getTaskList(url, status) {
         method: 'GET',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE
+            'Content-Type': CONTENT_TYPE_VALUE,
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
 
     })
@@ -31,7 +34,8 @@ export function createTask(url, body) {
         method: 'POST',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE
+            'Content-Type': CONTENT_TYPE_VALUE,
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
         body: JSON.stringify(body)
     })
@@ -47,7 +51,8 @@ export function deleteTask(url, task) {
         method: 'DELETE',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE
+            'Content-Type': CONTENT_TYPE_VALUE,
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
     })
         .then((response) => checkStatus(response))
@@ -62,7 +67,8 @@ export function updateTask(url, body) {
         method: 'PATCH',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE
+            'Content-Type': CONTENT_TYPE_VALUE,
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
         body: JSON.stringify(body)
     })
