@@ -1,3 +1,4 @@
 taskmanager/.idea/*
 taskmanager/node_modules
 .idea/*
+*.log

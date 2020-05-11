@@ -15,12 +15,12 @@ export default function signIn(login, password) {
             .then(response => {
                 localStorage.setItem('token', response.token);
                 dispatch({
-                    type: types.AUTHORIZE_SUCCESS
+                    type: types.AUTHENTICATE_SUCCESS
                 });
             })
             .catch(error => {
                 dispatch({
-                    type: types.AUTHORIZE_FAIL,
+                    type: types.AUTHENTICATE_FAIL,
                     error: error
                 })
             });

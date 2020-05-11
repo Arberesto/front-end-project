@@ -25,7 +25,7 @@ class ToDo extends React.Component {
 
     componentDidMount() {
         if (!this.props.authorized) {
-            this.props.history.replace('/login');
+            this.props.history.replace('/signin');
             return;
         }
         this.props.getTaskList('inbox');

@@ -1,7 +1,7 @@
 import * as types from '../actions/user/actionTypes'
 
 const initialState = {
-    authorized: !!localStorage.getItem('token'),
+    authorized: localStorage.getItem('token') != null,
     username: '',
     registered: false,
     error: null
@@ -9,7 +9,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case types.AUTHORIZE_SUCCESS: {
+        case types.AUTHENTICATE_SUCCESS: {
             return {
                 ...state,
                 authorized: true,
@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
                 error: null
             }
         }
-        case types.AUTHORIZE_FAIL: {
+        case types.AUTHENTICATE_FAIL: {
             return {
                 ...state,
                 authorized: false,
@@ -39,12 +39,17 @@ export default (state = initialState, action) => {
                 error: action.error
             }
         }
-        case types.AUTHENTICATE_FAIL: {
+        case types.LOGOUT_SUCCESS: {
             return {
                 ...state,
                 authorized: false,
-                username: '',
                 error: null
+            }
+        }
+        case types.LOGOUT_FAIL: {
+            return {
+                ...state,
+                error: action.error
             }
         }
         default: {

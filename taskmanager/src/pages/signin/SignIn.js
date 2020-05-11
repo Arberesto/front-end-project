@@ -18,7 +18,7 @@ class SignIn extends React.Component {
         super(props);
 
         this.state = {
-            username: '',
+            login: '',
             password: '',
             inputErr: ''
         }
@@ -39,7 +39,7 @@ class SignIn extends React.Component {
 
     handleChangeInLogin = (event) => {
         this.setState({
-            username: event.target.value,
+            login: event.target.value,
             inputErr: ''
         });
     };
@@ -55,7 +55,7 @@ class SignIn extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const username = event.target['username'].value;
+        const username = event.target['login'].value;
         const password = event.target['password'].value;
 
         this.props.login(username, password)
@@ -82,7 +82,7 @@ class SignIn extends React.Component {
                     <img className={"login__logo"} alt="app_logo" src={logo}/>
                     <FormInput
                         className={`input login-form__input ${this.state.inputErr}`}
-                        type={"email"}
+                        type='text'
                         name='login'
                         placeHolder='Email'
                         value={this.state.login}
@@ -109,12 +109,11 @@ class SignIn extends React.Component {
                        href={"/signup"}>Sign up</a>
                 </div>
             </React.Fragment>
-        )
-            ;
+        );
     }
 }
 
-Login.propTypes = {
+SignIn.propTypes = {
     authorized: PropTypes.bool,
     login: PropTypes.func,
     history: PropTypes.object
@@ -129,4 +128,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

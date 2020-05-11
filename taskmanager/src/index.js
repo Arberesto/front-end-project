@@ -7,6 +7,7 @@ import Base from './layouts/base/Base';
 import Done from "./pages/done/Done";
 import ToDo from "./pages/todo/ToDo";
 import SignIn from "./pages/signin/SignIn";
+import Auth from "./layouts/auth/Auth";
 import './index.css';
 
 ReactDOM.render(
@@ -14,9 +15,9 @@ ReactDOM.render(
         <BrowserRouter>
             <Switch>
                 <Route path='/signin' render={() => (
-                    <PlainLayout>
+                    <Auth>
                         <Route path='/signin' component={SignIn}/>
-                    </PlainLayout>
+                    </Auth>
                 )}/>
                 <Route path="/" render={() => (
                     <Base>
@@ -25,7 +26,7 @@ ReactDOM.render(
                         <Route exact path="/done" component={Done}/>
                     </Base>
                 )}/>
-                <Redirect to={'/'}/>
+                <Redirect to={'/todo'}/>
             </Switch>
         </BrowserRouter>
     </Provider>,

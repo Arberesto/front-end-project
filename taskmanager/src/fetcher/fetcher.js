@@ -82,7 +82,7 @@ export function postSignIn(url, data) {
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
             'Content-Type': CONTENT_TYPE_VALUE,
-            'Authorization': `Bearer ${localStorage.getItem(JWT_KEY)}`
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
         body: JSON.stringify(data)
     })
@@ -114,7 +114,7 @@ export function getWhoami(url) {
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
             'Content-Type': CONTENT_TYPE_VALUE,
-            'Authorization': `Bearer ${localStorage.getItem(JWT_KEY)}`
+            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
         }),
     })
         .then((response) => checkStatus(response))

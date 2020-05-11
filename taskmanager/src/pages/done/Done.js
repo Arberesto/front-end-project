@@ -21,6 +21,10 @@ class Done extends React.Component {
     }
 
     componentDidMount() {
+        if (!this.props.authorized) {
+            this.props.history.replace('/signin');
+            return;
+        }
         this.props.getTaskList('done');
     }
 
@@ -83,7 +87,9 @@ class Done extends React.Component {
 Done.propTypes = {
     createTask: PropTypes.func,
     getTaskList: PropTypes.func,
-    tasksList: PropTypes.array
+    tasksList: PropTypes.array,
+    authorized: PropTypes.bool,
+    history: PropTypes.object
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -92,7 +98,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-    tasksList: state.getTaskListReducer.tasksList
+    tasksList: state.getTaskListReducer.tasksList,
+    authorized: state.userReducer.authorized
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Done);

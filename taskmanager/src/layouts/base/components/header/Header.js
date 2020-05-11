@@ -3,12 +3,11 @@ import React from 'react';
 import './style.css';
 import logo from './resources/logo.png';
 import LogoutButton from "../../../../components/logout-button/LogoutButton";
+import {bindActionCreators} from "redux";
+import logout from "../../../../actions/user/logout";
+import {connect} from "react-redux";
 
-export default class Header extends React.Component {
-
-    onClick =  (event) => {
-        alert("logout");
-    };
+class Header extends React.Component {
 
         render() {
         return (
@@ -20,10 +19,18 @@ export default class Header extends React.Component {
                     </a>
                     <div className="header__right-corner">
                     <p className="header__username">Johny</p>
-                    <LogoutButton className="header__logout-button" onClick={this.onClick}/>
+                    <LogoutButton className="header__logout-button" onClick={this.props.logout}/>
                     </div>
                 </div>
             </header>
         );
     };
 };
+
+const mapDispatchToProps = (dispatch) => ({
+    logout: bindActionCreators(logout,dispatch)
+});
+
+const mapStateToProps = (state) => ({ });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

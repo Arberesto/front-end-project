@@ -1,0 +1,61 @@
+.login-form {
+    margin: 148px auto 42px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login__logo {
+    width: 207px;
+    height: 42px;
+    margin: 0 0 43px 46px;
+    background-image: url("./images/autho-logo.png");
+}
+
+.additional__signup_invitation {
+    color: #878787;
+    font-weight: 400;
+    text-align: center;
+}
+
+.additional__signup_link {
+    color: #626262;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+
+.additional {
+    text-align: center;
+    font-size: 13px;
+    font-family: "Roboto", serif;
+}
+
+
+
+.login-form__input {
+    font-size: 17px;
+    color: #626262;
+    font-weight: 400;
+    text-align: left;
+
+    border: none;
+    width: 100%;
+    display: block;
+
+    padding-bottom: 2px;
+    border-bottom: 1px solid #626262;
+    margin: 0 auto 44px auto;
+}
+
+.login-form__input:last-of-type {
+    margin-bottom: 0;
+}
+
+.input-error {
+    color: #fd5a6f;
+    border-bottom: 2px solid #fd5a6f;
+}
+
+.input__check-signup {
+    display: none;
+}
