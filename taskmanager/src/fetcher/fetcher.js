@@ -1,5 +1,5 @@
 const CONTENT_TYPE_VALUE = 'application/json';
-const  JWT = 'token';
+export const  JWT = 'token';
     function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
         return response;
@@ -81,8 +81,7 @@ export function postSignIn(url, data) {
         method: 'POST',
         headers: new Headers({
             'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE,
-            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
+            'Content-Type': CONTENT_TYPE_VALUE
         }),
         body: JSON.stringify(data)
     })
@@ -106,6 +105,10 @@ export function postSignup(url, data) {
         .catch((error) => {
             throw error;
         });
+}
+
+export function getLogout(url) {
+    return "response"
 }
 
 export function getWhoami(url) {

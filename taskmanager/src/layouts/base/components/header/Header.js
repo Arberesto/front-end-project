@@ -9,6 +9,10 @@ import {connect} from "react-redux";
 
 class Header extends React.Component {
 
+    logoutOnClick() {
+        this.props.logout();
+    }
+
         render() {
         return (
             <header className='header'>
@@ -19,7 +23,7 @@ class Header extends React.Component {
                     </a>
                     <div className="header__right-corner">
                     <p className="header__username">Johny</p>
-                    <LogoutButton className="header__logout-button" onClick={this.props.logout}/>
+                    <LogoutButton className="header__logout-button" onClick={this.logoutOnClick}/>
                     </div>
                 </div>
             </header>

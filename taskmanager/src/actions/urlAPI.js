@@ -3,3 +3,4 @@ export const URL_GET_TASK = 'http://taskmanager.io/api/tasks';
 export const URL_DELETE_TASK = 'http://taskmanager.io/api/tasks/';
 export const URL_UPDATE_TASK = 'http://taskmanager.io/api/tasks/';
 export const URL_SIGNIN = 'http://taskmanager.io/api/signin';
+export const URL_LOGOUT ='http://taskmanager.io/api/logout';
