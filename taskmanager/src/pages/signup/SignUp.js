@@ -72,7 +72,7 @@ class SignUp extends React.Component {
                             inputErr: '',
                             registered: false
                         });
-                        this.props.history.replace('/login');
+                        this.props.history.replace('/signin');
                     } else {
                         this.setState({
                             inputErr: 'input-error'
@@ -127,7 +127,7 @@ class SignUp extends React.Component {
                 <div className={"additional"}>
                     <p className={"additional__login_invitation"}>Already have an account?</p>
                     <a className={"additional__login_link"}
-                       href={"/login"}>Log in</a>
+                       href={"/signin"}>Log in</a>
                 </div>
             </React.Fragment>
         );

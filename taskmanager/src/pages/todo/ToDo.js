@@ -52,6 +52,9 @@ class ToDo extends React.Component {
         this.props.createTask({text: `${this.state.text}`})
             .then(() => {
                     this.props.getTaskList('inbox');
+                    this.setState({
+                     text: ''
+                    });
                 }
             )
     };
