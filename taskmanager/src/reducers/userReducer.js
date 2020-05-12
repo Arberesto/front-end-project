@@ -52,6 +52,23 @@ export default (state = initialState, action) => {
                 error: action.error
             }
         }
+        case types.CREATE_USER_SUCCESS: {
+            return {
+                ...state,
+                username: '',
+                registered: true,
+                error: null
+            }
+        }
+        case types.CREATE_USER_FAIL: {
+            return {
+                ...state,
+                username: '',
+                registered: false,
+                error: action.error
+            }
+        }
+
         default: {
             return state;
         }
