@@ -1,0 +1,89 @@
+.signup-form {
+    margin: 148px auto 42px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.signup__logo {
+    width: 207px;
+    height: 42px;
+    margin: 0 0 43px 46px;
+    background-image: url("./images/autho-logo.png");
+}
+
+.additional__login_invitation {
+    color: #878787;
+    font-weight: 400;
+    text-align: center;
+}
+
+.additional__login_link {
+    color: #626262;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+
+.additional {
+    text-align: center;
+    font-size: 13px;
+    font-family: "Roboto", serif;
+}
+
+.form__confirmation-block {
+    font-size: 12px;
+    font-weight: 400;
+
+    margin-top: 20px;
+    position: absolute;
+}
+
+.text-confirmation-block {
+    font-size: 12px;
+    color: #bdbdbd;
+
+    margin-top: 20px;
+    position: absolute;
+}
+
+.input__check-text {
+    display: inline;
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+}
+
+.input__check-text:before {
+    content: "";
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    left: 0;
+
+    background: transparent;
+    border: 2px solid #74bbfd;
+}
+
+.input__check-signup:enabled + .input__check-text {
+    color: #353535;
+}
+
+.input__check-signup:disabled + .input__check-text:before {
+    border-color: #bdbdbd;
+}
+
+.input__check-signup .input__check-text:before {
+    border-radius: 3px;
+    border-color: #bdbdbd;
+}
+
+.input__check-signup:checked + .input__check-text:before {
+    content: "\2713";
+    color: #74bbfd;
+    text-align: center;
+    line-height: 10px;
+}

@@ -92,7 +92,7 @@ export function postSignIn(url, data) {
         });
 }
 
-export function postSignup(url, data) {
+export function postSignUp(url, data) {
     return fetch(url, {
         method: 'POST',
         headers: new Headers({

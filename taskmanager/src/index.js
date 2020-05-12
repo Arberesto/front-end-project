@@ -20,9 +20,9 @@ ReactDOM.render(
                         <Route path='/signin' component={SignIn}/>
                     </Auth>
                 )}/>
-                <Route path='/signuo' render={() => (
+                <Route path='/signup' render={() => (
                     <Auth>
-                        <Route path='/signuo' component={SignUp}/>
+                        <Route path='/signup' component={SignUp}/>
                     </Auth>
                 )}/>
                 <Route path="/" render={() => (
