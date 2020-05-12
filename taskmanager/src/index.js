@@ -7,6 +7,7 @@ import Base from './layouts/base/Base';
 import Done from "./pages/done/Done";
 import ToDo from "./pages/todo/ToDo";
 import SignIn from "./pages/signin/SignIn";
+import SignUp from "./pages/signup/SignUp";
 import Auth from "./layouts/auth/Auth";
 import './index.css';
 
@@ -17,6 +18,11 @@ ReactDOM.render(
                 <Route path='/signin' render={() => (
                     <Auth>
                         <Route path='/signin' component={SignIn}/>
+                    </Auth>
+                )}/>
+                <Route path='/signuo' render={() => (
+                    <Auth>
+                        <Route path='/signuo' component={SignUp}/>
                     </Auth>
                 )}/>
                 <Route path="/" render={() => (

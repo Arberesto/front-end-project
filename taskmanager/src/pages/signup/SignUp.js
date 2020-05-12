@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 
 import logo from './images/autho-logo.png';
 import signup from '../../actions/user/signup';
-import FormField from "../../components/formField/FormField";
-import ButtonSubmit from "../../components/buttonSubmit/ButtonSubmit";
+import FormInput from "../../components/form-input/formInput";
+import SubmitButton from "../../components/submit-button/SubmitButton";
 import './style.css';
 
-class Signup extends React.Component {
+class SignUp extends React.Component {
 
     constructor(props) {
         super(props);
@@ -90,7 +90,7 @@ class Signup extends React.Component {
                     onSubmit={this.handleSubmit}
                 >
                     <img className={"signup__logo"} alt="app_logo" src={logo}/>
-                    <FormField
+                    <FormInput
                         className={`input login-form__input ${this.state.inputErr}`}
                         name='login'
                         type='text'
@@ -98,7 +98,7 @@ class Signup extends React.Component {
                         value={this.state.login}
                         onChange={this.handleChangeInLogin}
                     />
-                    <FormField
+                    <FormInput
                         className={`input login-form__input ${this.state.inputErr}`}
                         name='password'
                         placeHolder='Password'
@@ -108,7 +108,7 @@ class Signup extends React.Component {
                     />
 
                     <label className={"text-confirmation-block"}>
-                        <FormField
+                        <FormInput
                             className='input__check-signup'
                             type='checkbox'
                             disabled={!(this.state.password && this.state.login)}
@@ -117,7 +117,7 @@ class Signup extends React.Component {
                         />
                         <p className={"input__check-text"}>I agree to processing of personal data</p>
                     </label>
-                    <ButtonSubmit
+                    <SubmitButton
                         className='button login-form__button-submit'
                         type='submit'
                         value='Sign up'
@@ -134,7 +134,7 @@ class Signup extends React.Component {
     }
 }
 
-Signup.propTypes = {
+SignUp.propTypes = {
     authorized: PropTypes.bool,
     signup: PropTypes.func,
     registered: PropTypes.bool,
@@ -151,4 +151,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

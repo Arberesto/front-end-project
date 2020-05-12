@@ -18,3 +18,8 @@
 .form__input:empty {
     color: #939393;
 }
+
+.input-error {
+    color: #fd5a6f;
+    border-bottom: 2px solid #fd5a6f;
+}
