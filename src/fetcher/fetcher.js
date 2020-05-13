@@ -8,7 +8,7 @@ export const  JWT = 'token';
     throw new Error(response.statusText);
 }
 
-export function getTaskList(url, status) {
+export function get_authenticated(url, status) {
     return fetch(url + status, {
         method: 'GET',
         headers: new Headers({
@@ -23,11 +23,12 @@ export function getTaskList(url, status) {
             response.json()
         )
         .catch((error) => {
-            return error;
+            //return error
+            throw new Error(error.prototype.message);
         });
 }
 
-export function createTask(url, body) {
+export function post_authenticated(url, body) {
     return fetch(url, {
         method: 'POST',
         headers: new Headers({
@@ -40,11 +41,11 @@ export function createTask(url, body) {
         .then((response) => checkStatus(response))
         .then((response) => response.json())
         .catch((error) => {
-            return error;
+            throw new Error(error.prototype.message);
         });
 }
 
-export function deleteTask(url, task) {
+export function delete_authenticated(url, task) {
     return fetch(url + task, {
         method: 'DELETE',
         headers: new Headers({
@@ -56,11 +57,11 @@ export function deleteTask(url, task) {
         .then((response) => checkStatus(response))
         .then((response) => response.json())
         .catch((error) => {
-            return error;
+            throw new Error(error.prototype.message);
         });
 }
 
-export function updateTask(url, body) {
+export function patch_authenticated(url, body) {
     return fetch(url, {
         method: 'PATCH',
         headers: new Headers({
@@ -72,7 +73,7 @@ export function updateTask(url, body) {
     })
         .then((response) => checkStatus(response))
         .catch((error) => {
-            return error;
+            throw new Error(error.prototype.message);
         });
 }
 
@@ -88,7 +89,7 @@ export function postSignIn(url, data) {
         .then((response) => checkStatus(response))
         .then((response) => response.json())
         .catch((error) => {
-            throw error;
+            throw new Error(error.prototype.message);
         });
 }
 
@@ -103,27 +104,7 @@ export function postSignUp(url, data) {
     })
         .then((response) => checkStatus(response))
         .catch((error) => {
-            throw error;
-        });
-}
-
-export function getLogout(url) {
-    return "response"
-}
-
-export function getWhoami(url) {
-    return fetch(url, {
-        method: 'GET',
-        headers: new Headers({
-            'Accept': CONTENT_TYPE_VALUE,
-            'Content-Type': CONTENT_TYPE_VALUE,
-            'Authorization': `Bearer ${localStorage.getItem(JWT)}`
-        }),
-    })
-        .then((response) => checkStatus(response))
-        .then((response) => response.json())
-        .catch((error) => {
-            throw error;
+            throw new Error(error.prototype.message);
         });
 }
 

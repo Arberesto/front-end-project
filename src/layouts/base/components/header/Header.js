@@ -1,16 +1,14 @@
 import React from 'react';
 
-import './style.css';
-import logo from './resources/logo.png';
 import LogoutButton from "../../../../components/logout-button/LogoutButton";
-import {bindActionCreators} from "redux";
-import logout from "../../../../actions/user/logout";
-import {connect} from "react-redux";
 
-class Header extends React.Component {
+import logo from './resources/logo.png';
+import './style.css';
+
+export default class Header extends React.Component {
 
     logoutOnClick() {
-        this.props.logout();
+        alert('logout')
     }
 
         render() {
@@ -30,11 +28,3 @@ class Header extends React.Component {
         );
     };
 };
-
-const mapDispatchToProps = (dispatch) => ({
-    logout: bindActionCreators(logout,dispatch)
-});
-
-const mapStateToProps = (state) => ({ });
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)

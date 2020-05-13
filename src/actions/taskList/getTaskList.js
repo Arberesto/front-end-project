@@ -4,7 +4,7 @@ import * as urls from '../urlAPI';
 
 export default function getTaskList(status) {
     return (dispatch) => {
-        return fetcher.getTaskList(urls.URL_GET_TASK_LIST, status)
+        return fetcher.get_authenticated(urls.URL_GET_TASK_LIST, status)
             .then(response => {
                 dispatch({
                     type: types.GET_TASK_LIST_SUCCESS,

@@ -4,7 +4,7 @@ import * as urls from '../urlAPI';
 
 export default function createTask(task) {
     return (dispatch) => {
-        return fetcher.createTask(urls.URL_GET_TASK, task)
+        return fetcher.post_authenticated(urls.URL_GET_TASK, task)
             .then(response => {
                 dispatch({
                     type: types.CREATE_TASK_SUCCESS,

@@ -4,7 +4,7 @@ import * as urls from '../urlAPI';
 
 export default function createTask(task) {
     return (dispatch) => {
-        return fetcher.deleteTask(urls.URL_DELETE_TASK, task)
+        return fetcher.delete_authenticated(urls.URL_DELETE_TASK, task)
             .then(response => {
                 dispatch({
                     type: types.DELETE_TASK_SUCCESS,

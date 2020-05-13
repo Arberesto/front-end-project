@@ -4,7 +4,7 @@ import * as urls from '../urlAPI';
 
 export default function updateTask(id, body) {
     return (dispatch) => {
-        return fetcher.updateTask(urls.URL_UPDATE_TASK + id, body)
+        return fetcher.patch_authenticated(urls.URL_UPDATE_TASK + id, body)
             .then(() => {
                 dispatch({
                     type: types.UPDATE_TASK_SUCCESS,
