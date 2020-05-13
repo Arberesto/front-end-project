@@ -1,0 +1,49 @@
+{
+  "layout": {
+    "signin": {
+      "form": {
+        "placeholder": {
+          "email": "E-mail",
+          "password": "Password"
+        },
+        "button": {
+          "text": "Log in"
+        }
+      },
+      "additionalText": {
+        "createAccount": "Sign up",
+        "noHaveAccount": "Don't have an account?"
+      }
+    },
+    "signup": {
+      "form": {
+        "placeholder": {
+          "email": "E-mail",
+          "password": "Password"
+        },
+        "button": {
+          "text": "Sign up"
+        },
+        "text": {
+          "agree": "I agree to processing of personal data"
+        }
+      },
+      "additionalText": {
+        "haveAccount": "Already have an account?",
+        "signin": "Log in"
+      }
+    },
+    "sidebar": {
+      "links": {
+        "todo": "To do",
+        "done": "Done"
+      }
+    },
+    "todo": {
+      "form": {
+        "placeholder": "Type your new task",
+        "buttonText": "Create"
+      }
+    }
+  }
+}

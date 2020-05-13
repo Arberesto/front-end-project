@@ -1,0 +1,50 @@
+{
+  "layout": {
+    "signin": {
+      "form": {
+        "placeholder": {
+          "email": "Электронная почта",
+          "password": "Пароль"
+        },
+        "button": {
+          "text": "Войти в систему"
+        }
+      },
+      "additionalText": {
+        "createAccount": "Зарегистрироваться",
+        "noHaveAccount": "Нет аккаунта?"
+
+      }
+    },
+    "signup": {
+      "form": {
+        "placeholder": {
+          "email": "Электронная почта",
+          "password": "Пароль"
+        },
+        "button": {
+          "text": "Зарегистрироваться"
+        },
+        "text": {
+          "agree": "Я согласен обрабатывать мои персональные данные"
+        }
+      },
+      "additionalText": {
+        "haveAccount": "Уже есть акккаунт?",
+        "signin": "Войти в систему"
+      }
+    },
+    "sidebar": {
+      "links": {
+        "todo": "В процессе",
+        "done": "Сделано"
+      }
+    },
+    "todo": {
+      "form": {
+        "placeholder": "Назовите вашу новую задачу",
+        "buttonText": "Создать"
+      }
+    }
+  }
+}

@@ -133,7 +133,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-    tasksList: state.getTaskListReducer.tasksList,
+    tasksList: state.TaskListReducer.tasksList,
     authorized: state.userReducer.authorized
 });
 
