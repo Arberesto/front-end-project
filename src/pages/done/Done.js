@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {I18n} from 'react-redux-i18n';
 
 import Task from "../../components/task/Task";
 import SortButton from "../../components/sort-order-button/SortButton";
+
 import createTask from "../../actions/taskList/createTask";
 import getTaskList from "../../actions/taskList/getTaskList";
 
@@ -43,17 +45,8 @@ class Done extends React.Component {
         ;
     };
 
-    changeOrder = (event) => {
+    changeOrder = () => {
         alert("Order reversed");
-    };
-
-    onSubmit = (event) => {
-        event.preventDefault();
-        this.props.createTask({text: `${this.state.text}`})
-            .then(() => {
-                    this.props.getTaskList('done');
-                }
-            )
     };
 
     renderList = (tasksList) => {
@@ -75,7 +68,7 @@ class Done extends React.Component {
             <React.Fragment>
                 <div className={'done-page'}>
                     <div className='main__content-header'>
-                        <SortButton onClick={this.changeOrder} value="Sort by done date"/>
+                        <SortButton onClick={this.changeOrder} value={I18n.t('layout.done.buttons.sortButton')}/>
                     </div>
                 {this.renderList(this.state.tasksList)}
                 </div>
@@ -98,7 +91,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-    tasksList: state.getTaskListReducer.tasksList,
+    tasksList: state.TaskListReducer.tasksList,
     authorized: state.userReducer.authorized
 });
 

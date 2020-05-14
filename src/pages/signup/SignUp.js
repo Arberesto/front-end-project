@@ -2,12 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
+import {I18n} from 'react-redux-i18n';
 
-
-import logo from './images/autho-logo.png';
 import signup from '../../actions/user/signup';
 import FormInput from "../../components/form-input/formInput";
 import SubmitButton from "../../components/submit-button/SubmitButton";
+
+import logo from './images/autho-logo.png';
 import './style.css';
 
 class SignUp extends React.Component {
@@ -94,14 +95,14 @@ class SignUp extends React.Component {
                         className={`input login-form__input ${this.state.inputErr}`}
                         name='login'
                         type='text'
-                        placeHolder='Email'
+                        placeHolder={I18n.t('layout.signup.form.placeholder.email')}
                         value={this.state.login}
                         onChange={this.handleChangeInLogin}
                     />
                     <FormInput
                         className={`input login-form__input ${this.state.inputErr}`}
                         name='password'
-                        placeHolder='Password'
+                        placeHolder={I18n.t('layout.signup.form.placeholder.password')}
                         type='password'
                         value={this.state.password}
                         onChange={this.handleChangeInPassword}
@@ -115,19 +116,19 @@ class SignUp extends React.Component {
                             onChange={this.handleChangeAgree}
                             required={true}
                         />
-                        <p className={"input__check-text"}>I agree to processing of personal data</p>
+                        <p className={"input__check-text"}>{I18n.t('layout.signup.form.text.agree')}</p>
                     </label>
                     <SubmitButton
                         className='button login-form__button-submit'
                         type='submit'
-                        value='Sign up'
+                        value={I18n.t('layout.signup.form.button.text')}
                         disabled={!(this.state.login && this.state.password && this.state.agree)}
                     />
                 </form>
                 <div className={"additional"}>
-                    <p className={"additional__login_invitation"}>Already have an account?</p>
+                    <p className={"additional__login_invitation"}>{I18n.t('layout.signup.additionalText.haveAccount')}</p>
                     <a className={"additional__login_link"}
-                       href={"/signin"}>Log in</a>
+                       href={"/signin"}>{I18n.t('layout.signup.additionalText.signin')}</a>
                 </div>
             </React.Fragment>
         );

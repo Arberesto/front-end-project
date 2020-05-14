@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {I18n} from 'react-redux-i18n';
 
 import Task from '../../components/task/Task';
 import FormInput from '../../components/form-input/formInput';
 import SubmitButton from "../../components/submit-button/SubmitButton";
 import UploadButton from "../../components/upload-button/UploadButton";
 import SortButton from "../../components/sort-order-button/SortButton";
+
 import createTask from "../../actions/taskList/createTask";
 import getTaskList from "../../actions/taskList/getTaskList";
 
@@ -91,25 +93,25 @@ class ToDo extends React.Component {
                             <FormInput
                                 value={this.state.text}
                                 className="form__input"
-                                placeHolder="Type your new task"
+                                placeHolder={I18n.t('layout.todo.form.formText')}
                                 onChange={this.onChange}
                                 id="form-field"
                                 required={true}
                             />
                             <SubmitButton
                                 className="form__button"
-                                value="CREATE"
+                                value={I18n.t('layout.todo.form.buttonText')}
                                 type="submit"
                                 id="form-button"
                                 disabled={!this.state.text}
                             />
                         </form>
                         <UploadButton
-                            value="Upload CSV"
+                            value={I18n.t('layout.todo.buttons.uploadButton')}
                             onClick={this.upload}
                             className="csv-upload-button"
                         />
-                        <SortButton onClick={this.changeOrder} value="Sort by creation date"/>
+                        <SortButton onClick={this.changeOrder} value={I18n.t('layout.todo.buttons.sortButton')}/>
                     </div>
                     {this.renderList(this.state.tasksList)}
                 </div>

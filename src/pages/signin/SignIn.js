@@ -3,11 +3,13 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {I18n} from 'react-redux-i18n';
+
 import signIn from '../../actions/user/signin';
 import FormInput from "../../components/form-input/formInput";
 import SubmitButton from "../../components/submit-button/SubmitButton";
-import './style.css';
+
 import logo from './images/autho-logo.png';
+import './style.css';
 
 class SignIn extends React.Component {
 

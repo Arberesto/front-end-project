@@ -42,7 +42,17 @@
     "todo": {
       "form": {
         "placeholder": "Type your new task",
+        "formText": "Type your new task",
         "buttonText": "Create"
+      },
+      "buttons": {
+        "sortButton" : "Sort by creation date",
+        "uploadButton" : "Upload CSV"
+      }
+    },
+    "done" : {
+      "buttons": {
+        "sortButton" : "Sort by done date"
       }
     }
   }
