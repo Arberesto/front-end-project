@@ -15,6 +15,6 @@ const store = createStore(
 
 syncTranslationWithStore(store);
 store.dispatch(loadTranslations(localization));
-store.dispatch(setLocale('ru'));
+store.dispatch(setLocale('en'));
 
 export default store;
